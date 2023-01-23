@@ -39,6 +39,8 @@ class Encode < Translator
   attr_reader :result
 
   def initialize(text)
+    super
+
     words = text.split
 
     @result = words.map do |word|
