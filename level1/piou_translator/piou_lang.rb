@@ -1,0 +1,2 @@
+class PiouLang
+end
