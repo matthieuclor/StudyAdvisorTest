@@ -248,6 +248,8 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.21-x86_64-darwin)
+      railties (>= 6.0.0)
     temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.11)
@@ -302,6 +304,7 @@ DEPENDENCIES
   slim-rails
   sprockets-rails
   stimulus-rails
+  tailwindcss-rails
   traceroute
   turbo-rails
   tzinfo-data
