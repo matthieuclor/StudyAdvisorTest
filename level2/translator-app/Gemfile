@@ -42,8 +42,11 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Devise is a flexible authentication solution for Rails based on Warden.
+gem 'devise'
+
 # Use Sass to process CSS
-gem "sassc-rails"
+# gem "sassc-rails"
 # slim-rails provides Slim generators for Rails 3+. It was based on haml-rails and it does basically the same
 gem "slim-rails"
 # A utility-first CSS framework packed with classes
@@ -67,6 +70,12 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
+  # Preview email in the default browser instead of sending it.
+  gem 'letter_opener'
+
+  # The Bullet gem is designed to increase your application's performance by reducing the number of queries.
+  gem 'bullet'
+
   # A Rake task that helps you find dead routes and unused actions
   gem 'traceroute'
   # A RuboCop extension focused on enforcing Rails best practices and coding conventions.
@@ -83,6 +92,7 @@ group :test do
 
   # rspec-rails brings the RSpec testing framework to Ruby on Rails as a drop-in alternative to its default testing framework, Minitest.
   gem 'rspec-rails', '~> 6.0.0'
+  gem 'rails-controller-testing'
   # The Bullet gem is designed to increase your application's performance by reducing the number of queries.
   gem 'bullet'
   # factory_bot is a fixtures replacement with a straightforward definition syntax

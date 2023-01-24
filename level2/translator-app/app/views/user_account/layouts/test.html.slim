@@ -1,0 +1,90 @@
+.min-h-full
+  nav.bg-indigo-600
+    .mx-auto.max-w-7xl.px-4.sm:px-6.lg:px-8
+      .flex.h-16.items-center.justify-between
+        .flex.items-center
+          .flex-shrink-0
+
+    img.h-8.w-8[src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300" alt="Your Company"]
+.hidden.md:block
+  .ml-10.flex.items-baseline.space-x-4
+    a.bg-indigo-700.text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#" aria-current="page"]
+      | Dashboard
+    a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.px-3.py-2.rounded-md.text-sm.font-medium[href="#"]
+      | Team
+    a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.px-3.py-2.rounded-md.text-sm.font-medium[href="#"]
+      | Projects
+    a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.px-3.py-2.rounded-md.text-sm.font-medium[href="#"]
+      | Calendar
+    a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.px-3.py-2.rounded-md.text-sm.font-medium[href="#"]
+      | Reports
+.hidden.md:block
+  .ml-4.flex.items-center.md:ml-6
+    button.rounded-full.bg-indigo-600.p-1.text-indigo-200.hover:text-white.focus:outline-none.focus:ring-2.focus:ring-white.focus:ring-offset-2.focus:ring-offset-indigo-600[type="button"]
+      span.sr-only
+        | View notifications
+      svg.h-6.w-6[xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"]
+        path[stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"]
+    .relative.ml-3
+      div
+        button#user-menu-button.flex.max-w-xs.items-center.rounded-full.bg-indigo-600.text-sm.text-white.focus:outline-none.focus:ring-2.focus:ring-white.focus:ring-offset-2.focus:ring-offset-indigo-600[type="button" aria-expanded="false" aria-haspopup="true"]
+          span.sr-only
+            | Open user menu
+          img.h-8.w-8.rounded-full[src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""]
+      .absolute.right-0.z-10.mt-2.w-48.origin-top-right.rounded-md.bg-white.py-1.shadow-lg.ring-1.ring-black.ring-opacity-5.focus:outline-none[role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1"]
+        a#user-menu-item-0.block.px-4.py-2.text-sm.text-gray-700[href="#" role="menuitem" tabindex="-1"]
+          | Your Profile
+        a#user-menu-item-1.block.px-4.py-2.text-sm.text-gray-700[href="#" role="menuitem" tabindex="-1"]
+          | Settings
+        a#user-menu-item-2.block.px-4.py-2.text-sm.text-gray-700[href="#" role="menuitem" tabindex="-1"]
+          | Sign out
+.-mr-2.flex.md:hidden
+  button.inline-flex.items-center.justify-center.rounded-md.bg-indigo-600.p-2.text-indigo-200.hover:bg-indigo-500.hover:bg-opacity-75.hover:text-white.focus:outline-none.focus:ring-2.focus:ring-white.focus:ring-offset-2.focus:ring-offset-indigo-600[type="button" aria-controls="mobile-menu" aria-expanded="false"]
+    span.sr-only
+      | Open main menu
+    svg.block.h-6.w-6[xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"]
+      path[stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"]
+    svg.hidden.h-6.w-6[xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"]
+      path[stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"]
+#mobile-menu.md:hidden
+  .space-y-1.px-2.pt-2.pb-3.sm:px-3
+    a.bg-indigo-700.text-white.block.px-3.py-2.rounded-md.text-base.font-medium[href="#" aria-current="page"]
+      | Dashboard
+    a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.block.px-3.py-2.rounded-md.text-base.font-medium[href="#"]
+      | Team
+    a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.block.px-3.py-2.rounded-md.text-base.font-medium[href="#"]
+      | Projects
+    a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.block.px-3.py-2.rounded-md.text-base.font-medium[href="#"]
+      | Calendar
+    a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.block.px-3.py-2.rounded-md.text-base.font-medium[href="#"]
+      | Reports
+  .border-t.border-indigo-700.pt-4.pb-3
+    .flex.items-center.px-5
+      .flex-shrink-0
+        img.h-10.w-10.rounded-full[src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""]
+      .ml-3
+        .text-base.font-medium.text-white
+          | Tom Cook
+        .text-sm.font-medium.text-indigo-300
+          | tom@example.com
+      button.ml-auto.flex-shrink-0.rounded-full.border-2.border-transparent.bg-indigo-600.p-1.text-indigo-200.hover:text-white.focus:outline-none.focus:ring-2.focus:ring-white.focus:ring-offset-2.focus:ring-offset-indigo-600[type="button"]
+        span.sr-only
+          | View notifications
+        svg.h-6.w-6[xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"]
+          path[stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"]
+    .mt-3.space-y-1.px-2
+      a.block.rounded-md.px-3.py-2.text-base.font-medium.text-white.hover:bg-indigo-500.hover:bg-opacity-75[href="#"]
+        | Your Profile
+      a.block.rounded-md.px-3.py-2.text-base.font-medium.text-white.hover:bg-indigo-500.hover:bg-opacity-75[href="#"]
+        | Settings
+      a.block.rounded-md.px-3.py-2.text-base.font-medium.text-white.hover:bg-indigo-500.hover:bg-opacity-75[href="#"]
+        | Sign out
+header.bg-white.shadow
+  .mx-auto.max-w-7xl.py-6.px-4.sm:px-6.lg:px-8
+
+  h1.text-3xl.font-bold.leading-tight.tracking-tight.text-gray-900
+    | Dashboard
+main
+  .mx-auto.max-w-7xl.py-6.sm:px-6.lg:px-8
+    .px-4.py-4.sm:px-0
+      .h-96.rounded-lg.border-4.border-dashed.border-gray-200
