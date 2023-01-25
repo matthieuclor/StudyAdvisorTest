@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe UserAccount::MessagesController, type: :controller do
+RSpec.describe UserAccount::Tags::MessagesController, type: :controller do
   fixtures :users
 
   before do
@@ -11,7 +11,7 @@ RSpec.describe UserAccount::MessagesController, type: :controller do
 
   describe "GET index" do
     it "renders the index template" do
-      get :index
+      get :index, params: { tag_name: 'Urgent' }
       expect(response).to render_template("index")
     end
   end

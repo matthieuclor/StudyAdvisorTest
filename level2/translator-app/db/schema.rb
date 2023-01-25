@@ -10,9 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_24_101626) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_24_213424) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "messages", force: :cascade do |t|
+    t.text "french_content"
+    t.text "piou_content"
+    t.bigint "user_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_messages_on_tag_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", default: "", null: false

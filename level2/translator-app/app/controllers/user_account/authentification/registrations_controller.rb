@@ -22,15 +22,18 @@ module UserAccount
       end
 
       def update
-        if update_resource(current_user, account_update_params)
-          set_flash_message_for_update(resource, current_user.unconfirmed_email)
+        # if update_resource(current_user, account_update_params)
+        if resource.update_without_password(account_update_params)
+          # set_flash_message_for_update(resource, current_user.unconfirmed_email)
           bypass_sign_in(current_user, scope: :user) if sign_in_after_change_password?
         else
           flash[:error] = resource.errors.full_messages.first
           clean_up_passwords(current_user)
         end
 
-        redirect_to user_account_settings_path
+        pp resource.errors
+
+        redirect_to user_account_messages_path
       end
 
       def destroy # rubocop:disable Lint/UselessMethodDefinition
@@ -42,23 +45,18 @@ module UserAccount
       def configure_sign_up_params
         devise_parameter_sanitizer.permit(
           :sign_up,
-          keys: %i(first_name last_name)
+          keys: %i(first_name last_name language)
         )
       end
 
       def configure_account_update_params
         devise_parameter_sanitizer.permit(
           :account_update,
-          keys: %i(first_name last_name avatar phone address)
+          keys: %i(first_name last_name language)
         )
       end
 
-      def after_sign_up_path_for(resource)
-        session[:hutoki_plan] == 'premium' &&
-          resource.update(plan: :premium, plan_deadline: Date.current + 1.year)
-
-        NewUserSlackNotificationJob.perform_later(resource.id) if Rails.env.production?
-
+      def after_sign_up_path_for(_resource)
         user_account_dashboards_path
       end
 

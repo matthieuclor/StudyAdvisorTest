@@ -11,5 +11,12 @@ Rails.application.routes.draw do
 
   namespace :user_account do
     resources :dashboards, only: :index
+    resources :messages, only: %i(index show create)
+
+    resources :tags, param: :name, only: %i() do
+      scope module: :tags do
+        resources :messages, only: :index
+      end
+    end
   end
 end

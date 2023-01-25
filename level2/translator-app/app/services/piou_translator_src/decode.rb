@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './piou_translator/translator'
+require './app/services/piou_translator_src/translator'
 
 DECODE_LANG = {
   'piou' => 'A',

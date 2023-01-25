@@ -18,12 +18,7 @@ html.h-full.bg-gray-50
               .ml-10.flex.items-baseline.space-x-4
                 a.bg-indigo-700.text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#" aria-current="page"]
                   | Dashboard
-                a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.px-3.py-2.rounded-md.text-sm.font-medium[href="#"]
-                  | Users
-                a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.px-3.py-2.rounded-md.text-sm.font-medium[href="#"]
-                  | Messages
-                a.text-white.hover:bg-indigo-500.hover:bg-opacity-75.px-3.py-2.rounded-md.text-sm.font-medium[href="#"]
-                  | Tags
+                = link_to 'Messages', user_account_messages_path, class: "text-white hover:bg-indigo-500 hover:bg-opacity-75 px-3 py-2 rounded-md text-sm font-medium"
           .md:block
             .ml-4.flex.items-center.md:ml-6
               .relative.ml-3

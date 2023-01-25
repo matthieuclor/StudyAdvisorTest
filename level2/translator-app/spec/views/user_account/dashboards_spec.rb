@@ -17,7 +17,7 @@ describe "Dashboard page", type: :feature do
 
   describe "when i click on sign out link" do
     it "redirect to home page" do
-      click_link('deco')
+      click_link('Log out')
 
       expect(current_path).to eq('/')
     end

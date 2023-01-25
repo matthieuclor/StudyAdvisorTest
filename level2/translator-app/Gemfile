@@ -45,6 +45,9 @@ gem "bootsnap", require: false
 # Devise is a flexible authentication solution for Rails based on Warden.
 gem 'devise'
 
+# The Best Pagination Ruby Gem
+gem 'pagy', '~> 6.0'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 # slim-rails provides Slim generators for Rails 3+. It was based on haml-rails and it does basically the same
@@ -82,6 +85,10 @@ group :development do
   gem 'rubocop-rails'
   # rspec-rails brings the RSpec testing framework to Ruby on Rails as a drop-in alternative to its default testing framework, Minitest.
   gem 'rspec-rails', '~> 6.0.0'
+    # factory_bot is a fixtures replacement with a straightforward definition syntax
+  gem 'factory_bot_rails'
+  # This gem is a port of Perl's Data::Faker library that generates fake data.
+  gem 'faker'
 end
 
 group :test do
