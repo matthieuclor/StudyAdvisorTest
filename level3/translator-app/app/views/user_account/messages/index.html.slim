@@ -1,0 +1,17 @@
+= form_for(current_user, url: user_registration_path, data: { turbo: false }, html: { method: :put, class: 'space-y-6' }) do |f|
+  div
+    label class="block text-sm font-medium text-gray-700" Change language
+  .mb-2
+    = f.select(:language, User.languages.keys, {}, { onchange: 'this.form.submit()' })
+
+= form_for(Message.new, url: user_account_messages_path, data: { turbo: false }, html: { class: 'space-y-6' }) do |f|
+  div
+    label class="block text-sm font-medium text-gray-700" New message
+    .my-2
+      = f.text_area current_user.fr? ? :french_content : :piou_content, rows: 5, class: "block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+    .mb-2
+      = f.select(:tag_id, @tags.map { |t| [t.name, t.id] }, { prompt: "Select a tag" })
+    div
+      = f.submit "Send", class: 'flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+
+= render "user_account/shared/messages"

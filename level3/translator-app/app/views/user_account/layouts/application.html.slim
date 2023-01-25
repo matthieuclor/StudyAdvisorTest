@@ -1,0 +1,35 @@
+doctype html
+html.h-full.bg-gray-50
+  head
+    title
+      | TranslatorApp
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+  body.min-h-full
+    nav.bg-indigo-600
+      .mx-auto.max-w-7xl.px-4.sm:px-6.lg:px-8
+        .flex.h-16.items-center.justify-between
+          .flex.items-center
+            .md:block
+              .ml-10.flex.items-baseline.space-x-4
+                a.bg-indigo-700.text-white.px-3.py-2.rounded-md.text-sm.font-medium[href="#" aria-current="page"]
+                  | Dashboard
+                = link_to 'Messages', user_account_messages_path, class: "text-white hover:bg-indigo-500 hover:bg-opacity-75 px-3 py-2 rounded-md text-sm font-medium"
+          .md:block
+            .ml-4.flex.items-center.md:ml-6
+              .relative.ml-3
+                div
+                  = link_to 'Log out', destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white hover:bg-indigo-500 hover:bg-opacity-75 px-3 py-2 rounded-md text-sm font-medium"
+
+    main
+      .mx-auto.max-w-7xl.py-6.sm:px-6.lg:px-8
+        .px-4.py-4.sm:px-0
+          = render "layouts/notice"
+          = render "layouts/alert"
+
+          = yield
+
