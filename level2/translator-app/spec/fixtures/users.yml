@@ -1,0 +1,19 @@
+matthieu:
+  id: 1
+  first_name: Matthieu
+  last_name: Clor
+  email: matthieuclor@gmail.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password01') %>
+  reset_password_token: ame4gdumQ5ykYKfsYBN2
+  reset_password_sent_at: <%= DateTime.now %>
+  language: 0
+
+julien:
+  id: 2
+  first_name: Julien
+  last_name: Rolc
+  email: julienrolc@gmail.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password02') %>
+  reset_password_token: ame4gdumQ5ykYKfsYBN3
+  reset_password_sent_at: <%= DateTime.now %>
+  language: 1

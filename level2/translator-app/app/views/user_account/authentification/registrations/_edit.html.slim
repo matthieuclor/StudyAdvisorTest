@@ -1,0 +1,54 @@
+- if current_user.avatar.attached?
+  .d-flex.align-items-center.mb-4
+    = image_tag(current_user.avatar.variant(resize_to_fill: [80, 80]), class: "rounded-circle")
+    = button_to user_account_avatars_path,
+    -                   method: :delete,
+    -                   class: "btn btn-sm btn-danger ml-3",
+    -                   data: { confirm: "Etes-vous sûr ?" } do
+    = fa_icon('trash', 'Supprimer mon avatar', class: "mr-2")
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = f.input :avatar,
+  -               label: 'Choisir mon avatar',
+  -               input_html: {
+  -                 accept: "image/png|image/jpg|image/jpeg",
+  -                 lang: "fr"
+  -               },
+  -               hint: "Les formats acceptés: png, jpg, jpeg et la taille est limitée à 2mo."
+  .form-row
+    = f.input :first_name,
+    -                 input_html: {
+    -                   placeholder: "Jean",
+    -                   autocomplete: "name"
+    -                 },
+    -                 wrapper_html: { class: "col-6" }
+    = f.input :last_name,
+    -                 input_html: {
+    -                   placeholder: "Dupont",
+    -                   autocomplete: "family-name"
+    -                 },
+    -                 wrapper_html: { class: "col-6" }
+  = f.input :email,
+  -               required: true,
+  -               input_html: {
+  -                 placeholder: "jean.dupont@mail.com",
+  -                 autocomplete: "email"
+  -               },
+  -               hint: "En cas de mise à jour de l'email, un mail vous sera envoyé pour confirmer celui-ci."
+  |  <div id="registration-container" data-user-phone="
+  = f.object.phone
+  | "> 
+  #registration-vue
+  = f.input :address,
+  -               input_html: {
+  -                 placeholder: "23 Rue de rivoli",
+  -                 autocomplete: "street-address"
+  -               }
+  = f.input :current_password,
+  -               label: "Mot de passe",
+  -               input_html: {
+  -                 id: "user_account_password",
+  -                 autocomplete: "current-password"
+  -               },
+  -               hint: "Le mot de passe est obbligatoire pour effectuer les changements.",
+  -               required: true
+  = f.submit "Envoyer", class: "btn btn-block btn-success"
