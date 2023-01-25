@@ -15,4 +15,11 @@ class User < ApplicationRecord
 
   before_save -> { first_name.capitalize! }, if: :first_name_changed?
   before_save -> { last_name.capitalize! }, if: :last_name_changed?
+
+  def generate_jwt
+    JWT.encode(
+      { id: id, exp: 24.hours.from_now.to_i },
+      Rails.application.secrets.secret_key_base
+    )
+  end
 end

@@ -19,4 +19,18 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  namespace :api, defaults: { format: :json } do
+    scope module: :authentification do
+      resources :sessions, only: :create
+    end
+
+    resources :messages, only: %i(index show)
+
+    resources :tags, param: :name, only: %i() do
+      scope module: :tags do
+        resources :messages, only: :index
+      end
+    end
+  end
 end
