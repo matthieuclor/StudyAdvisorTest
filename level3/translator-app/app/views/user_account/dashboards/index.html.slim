@@ -1,0 +1,19 @@
+div
+  h3.text-lg.font-medium.leading-6.text-gray-900
+    | Stats
+  dl.mt-5.grid.grid-cols-1.gap-5.sm:grid-cols-3
+    .overflow-hidden.rounded-lg.bg-white.px-4.py-5.shadow.sm:p-6
+      dt.truncate.text-sm.font-medium.text-gray-500
+        | Total users
+      dd.mt-1.text-3xl.font-semibold.tracking-tight.text-gray-900
+        = @users_count
+    .overflow-hidden.rounded-lg.bg-white.px-4.py-5.shadow.sm:p-6
+      dt.truncate.text-sm.font-medium.text-gray-500
+        | Total messages
+      dd.mt-1.text-3xl.font-semibold.tracking-tight.text-gray-900
+        = @messages_count
+    .overflow-hidden.rounded-lg.bg-white.px-4.py-5.shadow.sm:p-6
+      dt.truncate.text-sm.font-medium.text-gray-500
+        | Total tags
+      dd.mt-1.text-3xl.font-semibold.tracking-tight.text-gray-900
+        = @tags_count
